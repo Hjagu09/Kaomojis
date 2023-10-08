@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="./retro/css/retro.css" rel="stylesheet">
+		<link href="./style.css" rel="stylesheet">
+		<script src="./list.js/dist/list.min.js">
+		</script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="kaomoji">
+			<h1>Kaomojis</h1>
+			<div id="inputs">
+				<input type="text" class="search" />
+				<a href="./smiles.csv" download="kaomoji.csv">more kaomojis (~17 000)</a>
+			</div>
+			<hr>
+			<ul class="list"></ul>
+		</div>
+		<script>
+			const copyElement = (e) => {
+				let selection = window.getSelection();
+				if (selection.rangeCount > 0) {
+					selection.removeAllRanges();
+				}
+				
+				let range = document.createRange();
+				range.selectNode(e);
+				selection.addRange(range);
+				document.execCommand('copy');
+			};
+			document.addEventListener('click', (e) => {
+				if(e.target.matches('p')) {
+					copyElement(e.target);
+				}
+			});
+			
+			var options = {
+			  valueNames: [ 'body' ],
+			  // Since there are no elements in the list, this will be used as template.
+			  item: '<li><p class="body"><p></li>'
+			};
+
+			var values = [];
+			var kaomoji = new List('kaomoji', options, values);
+
+			fetch("./smiles.very_small.csv")
+				.then((response) => {
+					if (!response.ok) {
+						throw new Error(`HTTP error: ${response.status}`);
+					}
+					return response.text();
+				})
+				.then((text) => {
+					console.log("ok");
+					let lines = text.split("\n");
+					console.log(`split: ${lines.length}`);
+					for (var line = 0; line < lines.length; line++)
+					{
+						kaomoji.add( { body : lines[line] } );
+					}
+					console.log("loading complete")
+				})
+				.catch((error) => {
+					throw new Error(`could not read kaomoji: ${error}`)
+				});
+		</script>
+	</body>
+</html>

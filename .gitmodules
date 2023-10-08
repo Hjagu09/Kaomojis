@@ -1,0 +1,6 @@
+[submodule "list.js"]
+	path = list.js
+	url = https://github.com/lovasoa/list.js.git
+[submodule "retro"]
+	path = retro
+	url = https://github.com/markdowncss/retro.git

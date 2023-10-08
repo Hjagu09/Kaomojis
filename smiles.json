@@ -1,0 +1,120 @@
+[
+	{
+		"heys" : [
+			":", ";"
+		] ,
+		"hmouths" : [
+			")", "]", "|", "}", "(", "[", "{", "c", "C", "o", "O"
+		] ,
+		"hnoses" : [
+			"-", "", "+"
+		] ,
+		"hhatsr" : [
+			"|=>", "|>", ">", "|>-*", "|}", "|]", "|)", "|=", ""
+		] ,
+		"hhatsl" : [
+			"<=|", "<|", "<", "*-<|", "{|", "(|", "[|", "=|", ""
+		] ,
+		"hbodysl" : [
+			"]", ")", "}", "="
+		],
+		"hbodysr" : [
+			"[", "(", "{", "="
+		],
+		"voutl" : [
+			"(", "[", "|", "="
+		] ,
+		"voutr" : [
+			")", "]", "|", "="
+		] ,
+		"veyes" : [
+			"±", "×", "*", "°", "+", "-", "=", "$", "#", "~", "^", "'", "?"
+		] ,
+		"vmouths" : [
+			"_", "U", "v", "u"
+		],
+		"vobjl" : [
+			"_/", "-", "=", "p", "b", "\\", "!", "Ï", "¬"
+		],
+		"vobjr" : [
+			"\\_", "-", "=", "q", "d", "/", "!", "Ï"
+		],
+		"varmsr" : [
+			"=", "/", "J"
+		],
+		"cups" : [
+			"c(_)", "C(_)", "c[_]", "C[_]"
+		],
+		"abackr" : [">", "»", "="],
+		"acenter" : ["-", "--", "~~", "~"],
+		"atipr" : [">", "»"],
+		"atipl" : ["<", "«", "<3"],
+		"abackl" : ["<", "«", "="],
+		"arrowr" : [
+			["abackr", "acenter", "atipr"]
+		],
+		"arrowl" : [
+			["atipl", "acenter", "abackl"]
+		],
+		"arrows" : [["arrowr"], ["arrowl"]],
+		"objects" : [
+			"<3", "[]-[]¬", "$$$", ["cups"]
+		],
+		"targets" : [
+			["objects"], "@", ["simple_smile_v"], ["standard_smile_v"]
+		],
+		"bowr" : [
+			"(}", "|)"
+		],
+		"vhold" : [
+			"text", ["objects"], "", ["bowr", "space", "arrowr", "space", "targets"]
+		],
+		"vholdsmall" : [
+			"text", ["objects"], ""
+		],
+		"simple_smile_v" : [[
+			["veyes","eye"], "vmouths", ["veyes","eye"]
+		]],
+		"standard_smile_v" : [[
+			["voutl", "out"], "simple_smile_v", ["voutr", "out"]
+		]],
+		"space" : [ " " ]
+	},
+	[
+		[
+			["hhatsl", "heys", "hnoses", "hmouths"],
+			["hmouths", "hnoses", "heys", "hhatsr"],
+			["hbodysl", "hmouths", "hnoses", "heys", "hhatsr"],
+			["hhatsl", "heys", "hnoses", "hmouths", "hbodysr"],
+			["standard_smile_v"],
+			["standard_smile_v", "vobjr"],
+			["vobjl", "standard_smile_v"],
+			[["vobjl", "arm"], ["voutl", "out"], "simple_smile_v", ["voutr", "out"], ["vobjr", "arm"]],
+			[["voutl", "out"], ["varmsr", "arm"], "space", "simple_smile_v", ["voutr", "out"], ["varmsr", "arm"], "space", "vhold"],
+			["objects"],
+			["arrows"]
+		],
+		[
+			["hhatsl", "heys", "hnoses", "hmouths"],
+			["hmouths", "hnoses", "heys", "hhatsr"],
+			["hbodysl", "hmouths", "hnoses", "heys", "hhatsr"],
+			["hhatsl", "heys", "hnoses", "hmouths", "hbodysr"],
+			["standard_smile_v"],
+			["standard_smile_v", "vobjr"],
+			["vobjl", "standard_smile_v"],
+			[["vobjl", "arm"], ["voutl", "out"], "simple_smile_v", ["voutr", "out"], ["vobjr", "arm"]],
+			[["voutl", "out"], ["varmsr", "arm"], "space", "simple_smile_v", ["voutr", "out"], ["varmsr", "arm"], "space", "vholdsmall"],
+			["objects"],
+			["arrows"]
+		],
+		[
+			["objects"],
+			["hmouths", "hnoses", "heys", "hhatsr"],
+			["hbodysl", "hmouths", "hnoses", "heys", "hhatsr"]
+		],
+		[
+			["objects"],
+			["hmouths", "hnoses", "heys", "hhatsr"]
+		]
+	]
+]
